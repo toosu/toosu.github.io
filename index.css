@@ -1,13 +1,5 @@
 @charset "utf-8";
 
-h1.welcome_text{
-    text-align: center;
-}
-
-p.beatmap{
-    text-align: center;
-}
-
-.url{
+.center{
     text-align: center;
 }
