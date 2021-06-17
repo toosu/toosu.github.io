@@ -1,5 +1,13 @@
 @charset "utf-8";
 
-.center{
+h1.center{
+    text-align: center;
+}
+
+p.center{
+    text-align: center;
+}
+
+a.center{
     text-align: center;
 }
