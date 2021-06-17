@@ -4,10 +4,10 @@ h1.welcome_text{
     text-align: center;
 }
 
-p{
+p.beatmap{
     text-align: center;
 }
 
-a{
+a.url{
     text-align: center;
 }
