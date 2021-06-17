@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-h1.center{
+h1.welcome_text{
     text-align: center;
 }
 
@@ -8,6 +8,6 @@ p.center{
     text-align: center;
 }
 
-a.center{
+a.url{
     text-align: center;
 }
