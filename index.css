@@ -2,10 +2,11 @@
 
 #top{
     background-image: url(images/mashiro.png);
-    //background-repeat: no-repeat;
-    //background-attachment: fixed;
-    //background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
 h1.welcome_text{
     text-align: center;
     border-style: solid;
