@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="ja-jp">
-    <head>
-        <meta charset="UTF-8">
-        <title>Home</title>
-	<link rel = "stylesheet" href = "index.css">
-<style>
-    .hide{
-        display:none;
-    }
-    .show{
-        display:block;
-    }
-</style>
-		</head>
-		<body>
-			<h1 class = "welcome_text">Welcome to too's blog</h1>
-			<p class="center">ブログ作りました。よろしくお願いします</p>
-			
-			<h2 class="blog_text">In Blog</h2>
-			<button class = "center" id="button1>・Beatmaps</button>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="welcome_text">Welcome to too's blog</h1>
+    <p class="center">ブログ作りました。よろしくお願いします</p>
+
+    <h2 class="blog_text">In Blog</h2>
+    <button class="center" id="button1">・Beatmaps</button>
 			<p class="center hide" id=button1_text><a href="https://toosu.github.io/osu/beatmap/ranked">Ranked</a></p>
-			
-			<h2 class="blog_text">External url</h2>
-			<button class="center" id=button2>・Social</button>
-			<p class="center hide" id=button2_text><a href="https://twitter.com/IYXMC">Twitter</a></p>
-			<p class="center hide" id=button2_text><a href="https://osu.ppy.sh/users/12196931">osu! userpage</a></p>
-<script>
-	var button1 = document.getElementById("button1");
+
+        <h2 class="blog_text">External url</h2>
+        <button class="center" id=button2>・Social</button>
+        <p class="center hide" id=button2_text><a href="https://twitter.com/IYXMC">Twitter</a></p>
+        <p class="center hide" id=button2_text><a href="https://osu.ppy.sh/users/12196931">osu! userpage</a></p>
+        <script>
+            var button1 = document.getElementById("button1");
             var button1_text = document.getElementById("button1_text");
-            function toggle(){
+            function toggle() {
                 button1_text.classList.toggle("hide");
             }
-            button1.onclick = function(){
+            button1.onclick = function () {
                 toggle();
             }
-						    
-	var button2 = document.getElementById("button2");
+
+            var button2 = document.getElementById("button2");
             var button2_text = document.getElementById("button2_text");
-            function toggle(){
+            function toggle() {
                 button2_text.classList.toggle("hide");
             }
-            button2.onclick = function(){
+            button2.onclick = function () {
                 toggle();
             }
-			</script>
-		</body>
+        </script>
+</body>
+
 </html>
