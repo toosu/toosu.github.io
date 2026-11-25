@@ -15,36 +15,57 @@
   </header>
   <main>
     <h1>機能ガイド</h1>
-    <p><a href="/particle-live-toolkit/manual/">操作マニュアルを開く →</a></p>
-    <p>知りたい操作を選ぶと、その手順が開きます。Unityでは <strong>Tools → Particle Live Toolkit</strong> から各機能を使えます。</p>
-    <nav class="topics" aria-label="ガイドの目次"><a href="#music">準備・音合わせ</a><a href="#effects">演出の配置・整理</a><a href="#preview">プレビュー・編集の再開</a></nav>
-    <section id="music"><h2>準備・音合わせ</h2>
+    <p>曲の拍に合わせて演出を出し、音を聴きながらタイミングを調整するための Unity 拡張です。<strong>Tools → Particle Live Toolkit</strong> で編集中のライブを選び、曲の BPM を設定します。</p>
+
+    <section aria-labelledby="editing">
+      <h2 id="editing">音に合わせてキーを打つ、3つの操作</h2>
+      <div class="guide-highlights">
+        <article>
+          <h3><a href="/particle-live-toolkit/manual/#animation">拍に合わせて編集位置を移動</a></h3>
+          <p>Animation で <kbd>Alt + ← / →</kbd> を押すと、再生ヘッドが曲の BPM に合わせて<strong>4分音符ひとつ分</strong>移動します。左矢印で戻り、右矢印で進みます。</p>
+          <p><kbd>Shift</kbd> も押すと <strong>1小節</strong>、<kbd>Ctrl</kbd> も押すと <strong>16分音符</strong>に移動幅が変わります。</p>
+        </article>
+        <article>
+          <h3><a href="/particle-live-toolkit/manual/#active">出したい瞬間にオン・オフを記録</a></h3>
+          <p>Hierarchy で演出オブジェクトを選び、Animation で出現させたいフレームに合わせて <kbd>Ctrl + R</kbd>。<strong>1フレーム前にオフ、現在のフレームにオン</strong>のキーが入ります。</p>
+          <p>たとえば 120 フレームで押すと、119 でオフ、120 でオンになります。先頭の 0 フレームではオンだけを記録します。</p>
+        </article>
+        <article>
+          <h3><a href="/particle-live-toolkit/manual/#audition">スペース長押しで聴き直す</a></h3>
+          <p>Animation または Timeline で確認したい位置に合わせ、<kbd>スペース</kbd> を長押し。<strong>押している間だけ再生し、離すと開始位置に戻ります。</strong></p>
+          <p>キーを少しずらした後も、同じ位置から音と演出のタイミングを確かめられます。短く押すと通常の再生・停止です。</p>
+        </article>
+      </div>
+    </section>
+
+    <nav class="topics" aria-label="作業から探す"><a href="#music">ライブの準備と音合わせ</a><a href="#effects">演出の作成と整理</a><a href="#preview">確認と編集の再開</a></nav>
+    <section id="music"><h2>ライブの準備と音合わせ</h2>
       <dl class="entries">
-        <div><dt><a href="/particle-live-toolkit/manual/#setup">曲・Animation・Timelineの配置を一度で済ませる</a></dt><dd>Project → ライブを生成</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#copy-time">小節や音符の秒数を暗算せずコピーする</a></dt><dd>よく使う項目 → 秒数コピー（細かい指定は Beat）</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#snap">選択したキーのタイミングをまとめて拍に揃える</a></dt><dd>Beat Snap → 選択キーを拍に合わせる</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#animation">再生ヘッドを1小節・4分・16分単位で前後に動かす</a></dt><dd>UnityのAnimationウィンドウで Alt と矢印キーを使用。移動幅は修飾キーで切り替えます。</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#repeat">選んだカーブを1・2・4拍間隔で4回ずつ追加する</a></dt><dd>よく使う項目 → 現在の範囲を取得 → ビートで4回 など（詳細設定は Animation）</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#active">オフ・オンの2つのキーを一度に打つ</a></dt><dd>Hierarchyで対象を選択 → UnityのAnimationウィンドウで Ctrl+R。現在フレームがオン、1フレーム前がオフ。0フレームではオンのみ。</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#audition">同じ箇所を頭出しし直さずに聴き比べる</a></dt><dd>UnityのTimeline・Animationでスペース長押し → 離すと元の位置。目印の登録は Marker System → 現在位置にマーカーを追加</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#setup">音源付きのシーンを作る</a></dt><dd><strong>Project → ライブを生成</strong>。曲と BPM を指定すると、新しいシーンの Timeline に音源とメインのアニメーションクリップが並びます。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#copy-time">小節や音符の長さを秒数でコピー</a></dt><dd><strong>よく使う項目 → 秒数コピー</strong>で「1小節」や「4分」を選び、粒子の寿命などの秒数欄に貼り付けます。ほかの音符や倍率は <strong>Beat</strong> で選べます。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#snap">すでに打ったキーを拍に揃える</a></dt><dd>Animation でキーを選び、<strong>Beat Snap → 選択キーを拍に合わせる</strong>を押すと、選んだキー自体が指定した音符の位置へ移動します。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#repeat">点滅や動きを繰り返す</a></dt><dd>キーを選び、<strong>よく使う項目 → 現在の範囲を取得</strong>。「ビートで4回」を押すたびに、選んだカーブの動きが1拍間隔で4回ずつ追加されます。間隔は2拍・4拍にも切り替えられます。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#markers">サビの頭に目印を付ける</a></dt><dd><strong>Marker System → 現在位置にマーカーを追加</strong>で名前を付けます。「移動」を押せば、そのフレームから編集を続けられます。</dd></div>
       </dl>
     </section>
-    <section id="effects"><h2>演出の配置・整理</h2>
+    <section id="effects"><h2>演出の作成と整理</h2>
       <dl class="entries">
-        <div><dt><a href="/particle-live-toolkit/manual/#presets">床・トレイル・Burst・雪の初期設定を省く</a></dt><dd>便利ツール → 透明な床（Collider）、マテリアル付き Particle、マテリアル付き Trail Particle、Burst 100、広範囲に降る雪</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#capacity">アニメーション中の発生数を調べてMax Particlesを見積もる手間を省く</a></dt><dd>Hierarchyで対象を選択 → 便利ツール → Max Particles → 必要数を計算して適用</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#paths">階層を変えた後のAnimationパスをまとめて直す</a></dt><dd>よく使う項目 → 変更前に押す → 改名・移動 → 変更後に押す（個別確認は Path Fixer）</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#arrange">同じ調整を複数のオブジェクトにまとめて適用する</a></dt><dd>整列は <a href="/particle-live-toolkit/manual/#arrange">Transform</a>、連番は <a href="/particle-live-toolkit/manual/#paths">Batch Rename</a>、粒子設定は <a href="/particle-live-toolkit/manual/#batch-edit">Particle Editor</a>、マテリアル変更は <a href="/particle-live-toolkit/manual/#batch-edit">Material Editor</a></dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#reuse">作った演出をPrefabとして次のシーンでも使う</a></dt><dd>Effect Preset → 選択した演出を保存。呼び出すときは一覧の「配置」</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#presets">設定済みの粒子や床を置く</a></dt><dd><strong>便利ツール</strong>で透明な床、マテリアル付きの粒子、トレイル、Burst 100、雪を追加できます。置いた後は Inspector で好みの見た目に調整できます。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#capacity">粒子数の上限を計算する</a></dt><dd>対象の階層を選び、<strong>便利ツール → Max Particles → 必要数を計算して適用</strong>。放出数・寿命・アニメーション中の値から、余裕を持たせた上限を設定します。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#arrange">複数の演出を並べる</a></dt><dd><strong>Transform</strong> で「等間隔」や「円形」を選ぶと、選択したオブジェクトをまとめて配置できます。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#paths">改名や親の変更後もキーで動かす</a></dt><dd><strong>よく使う項目</strong>で「変更前に押す」→ 改名・移動 →「変更後に押す」の順に操作すると、クリップの参照先が更新されます。個別の修正は <strong>Path Fixer</strong>、一括改名は <strong>Batch Rename</strong> から行えます。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#batch-edit">粒子やマテリアルをまとめて調整</a></dt><dd>粒子の設定は <strong>Particle Editor</strong>、色などの共通設定は <strong>Material Editor</strong> で、選んだ対象にまとめて適用できます。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#reuse">作った演出を別の場面で使う</a></dt><dd>演出の親を選び、<strong>Effect Preset → 選択した演出を保存</strong>。次に使うときは一覧の「配置」で呼び出せます。</dd></div>
       </dl>
     </section>
-    <section id="preview"><h2>プレビュー・編集の再開</h2>
+    <section id="preview"><h2>確認と編集の再開</h2>
       <dl class="entries">
-        <div><dt><a href="/particle-live-toolkit/manual/#loop">観客視点で同じ区間だけ繰り返し確認する</a></dt><dd>Preview → 区間ループ</dd></div>
-        <div><dt><a href="/particle-live-toolkit/manual/#resume">ライブを切り替えるたびにシーンと編集位置を探す手間を省く</a></dt><dd>ライブの編集 → ライブ設定を読み込む → このライブの編集に戻る</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#loop">観客の位置からサビを繰り返し見る</a></dt><dd><strong>Preview</strong> で視点を選び、「区間ループ」の開始と終了を指定します。Play Mode に入らず、その区間の見え方を確認できます。</dd></div>
+        <div><dt><a href="/particle-live-toolkit/manual/#resume">前回の編集位置に戻る</a></dt><dd><strong>ライブの編集</strong>で対象を選び、「ライブ設定を読み込む」→「このライブの編集に戻る」を押すと、その曲のシーンが開き、前回の編集フレームに戻れます。</dd></div>
       </dl>
     </section>
-    <p class="guide-link"><a href="/particle-live-toolkit/manual/">操作マニュアルで手順を確認する →</a></p>
+    <p class="guide-link"><a href="/particle-live-toolkit/manual/">画面を見ながら操作マニュアルを読む →</a></p>
+
   </main>
 </body>
 </html>
