@@ -145,6 +145,34 @@
             "Assets/ParticleLiveToolkit": "0d451d47bfe990d48b4e01ecf63a1960"
           },
           "zipSHA256": "e3fdf2f3409174c62bbc3f7dc472bf3d28e6682d410529b2ffeffc38d21b8efc"
+        },
+        "0.3.5": {
+          "name": "com.particle-live.toolkit",
+          "version": "0.3.5",
+          "dependencies": {
+            "com.unity.timeline": "1.7.5",
+            "com.unity.modules.animation": "1.0.0",
+            "com.unity.modules.audio": "1.0.0",
+            "com.unity.modules.director": "1.0.0",
+            "com.unity.modules.imgui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.particlesystem": "1.0.0",
+            "com.unity.modules.physics": "1.0.0"
+          },
+          "displayName": "Particle Live Toolkit",
+          "description": "VRChat ワールド向けパーティクルライブ制作の「面倒な作業だけ」を自動化する Editor 拡張。",
+          "unity": "2022.3",
+          "author": {
+            "name": "toosu",
+            "email": "24892404+toosu@users.noreply.github.com",
+            "url": "https://github.com/toosu"
+          },
+          "documentationUrl": "https://toosu.github.io/particle-live-toolkit/",
+          "url": "https://toosu.github.io/particle-live-toolkit/com.particle-live.toolkit-0.3.5.zip",
+          "legacyFolders": {
+            "Assets/ParticleLiveToolkit": "0d451d47bfe990d48b4e01ecf63a1960"
+          },
+          "zipSHA256": "075378c641751bc5b598608366d475c1014a2a2e580eb7f44bed94eb7ca0743f"
         }
       }
     }
