@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Particle Live Toolkit ｜ 導入と使い方</title><meta name="description" content="VRChatのパーティクルライブ制作で、曲合わせ・繰り返し・一括編集を手早く行うUnity拡張です。">
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#0c131b;color:#edf4f5}
+body{max-width:55rem;margin:auto;padding:clamp(24px,6vw,84px) 22px;line-height:1.8}
+header{border-top:3px solid #91ecd2}h1{font-size:clamp(36px,7vw,66px);line-height:1.05;letter-spacing:-.045em;margin:.55em 0 .32em}h2{font-size:1.3rem;margin:2rem 0 .5rem}
+p{margin:.65em 0}a{color:#9af0d7}.button{display:inline-block;background:#93ead0;color:#0a2721;padding:.7em 1.2em;border-radius:.4em;font-weight:700;text-decoration:none}
+.button:hover,.button:focus-visible{background:#c4ffed}.url{overflow-wrap:anywhere;font-family:monospace}details{margin:.7em 0}summary{cursor:pointer}
+dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,21rem),1fr));gap:1.2em 2em}dl div{border-top:1px solid #39505a;padding-top:.65em}dt{font-weight:700}dd{margin:.25em 0;color:#c7d6dd}small{color:#b4c9ce}
+</style>
+<main><header><h1>Particle Live Toolkit</h1><p>VRChatのパーティクルライブ制作で、曲合わせ・繰り返し・一括編集を手早く行うUnity拡張です。</p><small>v0.3.0 · Unity 2022.3</small></header>
+<h2>導入する</h2><a class="button" href="vcc://vpm/addRepo?url=https%3A%2F%2Ftoosu.github.io%2Fparticle-live-toolkit%2Findex.json">ALCOM・VCCにリポジトリを追加</a>
+<details><summary>URLを手動で登録する</summary><p>ALCOMまたはVCCのリポジトリ追加画面に、このURLを貼り付けてください。</p><a class="url" href="index.json">https://toosu.github.io/particle-live-toolkit/index.json</a></details>
+<p>リポジトリを追加したら、対象プロジェクトのパッケージ一覧で「Particle Live Toolkit」をインストールします。Unityで「Tools → Particle Live Toolkit」を開き、「Project」から曲とBPMを設定してください。</p><details><summary>旧unitypackage版をお使いの方へ</summary><p>旧unitypackage版から更新すると、パッケージ管理ツールが Assets/ParticleLiveToolkit を削除します。そこに独自に追加・編集したファイルは先に退避してください。通常のライブ作品は別フォルダの Assets/ParticleLive にあります。</p></details>
+<h2>制作でできること</h2><dl><div><dt>ライブを始める</dt><dd>曲とBPMを選ぶと、新しいシーンに音源、Animationクリップ、編集用Timeline、黒い背景、観客視点を用意します。</dd></div><div><dt>曲に合わせて動かす</dt><dd>小節や音符の長さを秒数でコピーし、選択キーを拍に揃えられます。選んだカーブだけを1・2・4拍間隔で4回ずつ繰り返せます。</dd></div><div><dt>見たい瞬間を探す</dt><dd>色と名前を付けたマーカーで指定フレームへ移動。Timeline・Animationではスペース長押しで試聴し、離すと開始位置に戻ります。短押しは通常の再生・停止です。</dd></div><div><dt>演出を配置・調整する</dt><dd>透明な当たり判定の床、マテリアル付き粒子、トレイル、100粒のBurst、広範囲の雪をワンクリックで追加。選択した粒子のMax Particlesも、アニメーションの最大値を考慮して調整できます。</dd></div><div><dt>まとめて編集・再利用する</dt><dd>オブジェクトの整列・連番リネーム、マテリアルや粒子設定の一括変更、改名や親変更後のAnimationパス修正ができます。作った演出はPrefabに保存して再配置できます。</dd></div><div><dt>確認して次回に引き継ぐ</dt><dd>観客視点で曲と演出を区間ループ。ライブ別に編集位置とツール設定を保存し、「このライブの編集に戻る」で作業を再開できます。</dd></div></dl><p><small>Unity 2022.3・Unity Timeline 1.7系。VRChat用の同期再生スクリプトの自動設定にはWorlds SDKとUdonSharpを使います。</small></p></main></html>
