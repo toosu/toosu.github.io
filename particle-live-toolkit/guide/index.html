@@ -7,22 +7,22 @@
   <meta name="description" content="制作の手間を減らす操作と、その操作を使うタブ・ショートカットを紹介します。">
   <link rel="stylesheet" href="../toolkit.css">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
 </head>
 <body>
   <header class="masthead">
     <a class="brand" href="../">Particle Live Toolkit</a>
-    <nav aria-label="サイト内メニュー"><a href="../">導入</a><a href="./" aria-current="page">機能ガイド</a></nav>
+    <nav aria-label="サイト内メニュー"><a href="../">導入</a><a href="./" aria-current="page">機能ガイド</a><a href="../manual/">操作マニュアル</a></nav>
   </header>
   <main>
     <h1>機能ガイド</h1>
     <p>Unityの <strong>Tools → Particle Live Toolkit</strong> を開き、作業に合うタブを選んでください。</p>
-    <nav class="topics" aria-label="ガイドの目次"><a href="#music">準備・音合わせ</a><a href="#effects">演出の配置・整理</a><a href="#preview">プレビュー・編集の再開</a><a href="#bpm-shortcuts">BPM移動ショートカット</a></nav>
+    <nav class="topics" aria-label="ガイドの目次"><a href="#music">準備・音合わせ</a><a href="#effects">演出の配置・整理</a><a href="#preview">プレビュー・編集の再開</a></nav>
     <section id="music"><h2>準備・音合わせ</h2>
       <dl class="entries">
         <div><dt>曲・Animation・Timelineの配置を一度で済ませる</dt><dd>Project → ライブを生成</dd></div>
         <div><dt>小節や音符の秒数を暗算せずコピーする</dt><dd>よく使う項目 → 秒数コピー（細かい指定は Beat）</dd></div>
         <div><dt>選択したキーのタイミングをまとめて拍に揃える</dt><dd>Beat Snap → 選択キーを拍に合わせる</dd></div>
+        <div><dt>再生ヘッドを1小節・4分・16分単位で前後に動かす</dt><dd>UnityのAnimationウィンドウで Alt と矢印キーを使用。移動幅は修飾キーで切り替えます。</dd></div>
         <div><dt>選んだカーブを1・2・4拍間隔で4回ずつ追加する</dt><dd>よく使う項目 → 現在の範囲を取得 → ビートで4回 など（詳細設定は Animation）</dd></div>
         <div><dt>オフ・オンの2つのキーを一度に打つ</dt><dd>Hierarchyで対象を選択 → UnityのAnimationウィンドウで Ctrl+R。現在フレームがオン、1フレーム前がオフ。0フレームではオンのみ。</dd></div>
         <div><dt>同じ箇所を頭出しし直さずに聴き比べる</dt><dd>UnityのTimeline・Animationでスペース長押し → 離すと元の位置。目印の登録は Marker System → 現在位置にマーカーを追加</dd></div>
@@ -43,25 +43,7 @@
         <div><dt>ライブを切り替えるたびにシーンと編集位置を探す手間を省く</dt><dd>ライブの編集 → ライブ設定を読み込む → このライブの編集に戻る</dd></div>
       </dl>
     </section>
-    <section id="bpm-shortcuts"><h2>BPMに合わせて編集位置を移動</h2>
-      <p>Toolkit上部でライブとBPMを確認し、UnityのAnimationウィンドウにフォーカスして押します。再生ヘッドが指定した長さだけ移動します。1小節の長さにはライブの拍数設定も反映されます。</p>
-      <dl class="entries">
-        <div><dt>1小節</dt><dd>
-          <span class="key-line">戻る　<kbd>Alt + Shift + ←</kbd> または <kbd>Alt + 3</kbd></span>
-          <span class="key-line">進む　<kbd>Alt + Shift + →</kbd> または <kbd>Alt + 4</kbd></span>
-        </dd></div>
-        <div><dt>4分音符</dt><dd>
-          <span class="key-line">戻る　<kbd>Alt + ←</kbd> または <kbd>Alt + 1</kbd></span>
-          <span class="key-line">進む　<kbd>Alt + →</kbd> または <kbd>Alt + 2</kbd></span>
-        </dd></div>
-        <div><dt>16分音符</dt><dd>
-          <span class="key-line">戻る　<kbd>Alt + Ctrl + ←</kbd> または <kbd>Alt + 5</kbd></span>
-          <span class="key-line">進む　<kbd>Alt + Ctrl + →</kbd> または <kbd>Alt + 6</kbd></span>
-        </dd></div>
-      </dl>
-      <p class="note">数字はキーボード上段を使います。macOSではAltはOption、16分音符の矢印操作のCtrlはCommandです。割り当ては Edit → Shortcuts → Particle Live で変更できます。</p>
-    </section>
-    <p class="guide-link"><a href="../">← 導入ページへ</a></p>
+    <p class="guide-link"><a href="../manual/">操作マニュアルで手順を確認する →</a></p>
   </main>
 </body>
 </html>

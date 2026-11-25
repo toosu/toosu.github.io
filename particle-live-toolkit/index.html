@@ -7,18 +7,11 @@
   <meta name="description" content="このツールは作る過程の楽しみはユーザーに残し、めんどくさい作業の効率化にフォーカスしたEditor拡張です。">
   <link rel="stylesheet" href="./toolkit.css">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script>
-    function openMovedSection() {
-      if (location.hash === '#bpm-shortcuts') location.replace('guide/#bpm-shortcuts');
-    }
-    openMovedSection();
-    window.addEventListener('hashchange', openMovedSection);
-  </script>
 </head>
 <body>
   <header class="masthead">
     <a class="brand" href="./">Particle Live Toolkit</a>
-    <nav aria-label="サイト内メニュー"><a href="./" aria-current="page">導入</a><a href="guide/">機能ガイド</a></nav>
+    <nav aria-label="サイト内メニュー"><a href="./" aria-current="page">導入</a><a href="guide/">機能ガイド</a><a href="./manual/">操作マニュアル</a></nav>
   </header>
   <main>
     <h1>Particle Live Toolkit</h1>
@@ -41,7 +34,7 @@
       <p class="note">Unity 2022.3・Unity Timeline 1.7系。VRChat用の同期再生スクリプトの自動設定にはWorlds SDKとUdonSharpを使います。</p>
       <details><summary>旧unitypackage版から更新する方へ</summary><p>旧unitypackage版から更新すると、パッケージ管理ツールが Assets/ParticleLiveToolkit を削除します。そこに独自に追加・編集したファイルは先に退避してください。通常のライブ作品は別フォルダの Assets/ParticleLive にあります。</p></details>
     </section>
-    <p class="guide-link"><a href="guide/">機能の紹介と使い方を見る →</a>　<a id="bpm-shortcuts" href="guide/#bpm-shortcuts">BPM移動ショートカット一覧</a></p>
+    <p class="guide-link"><a href="guide/">機能ガイドで使いたい機能を探す</a><br><a href="manual/">操作マニュアルで手順を確認する</a></p>
   </main>
 </body>
 </html>
