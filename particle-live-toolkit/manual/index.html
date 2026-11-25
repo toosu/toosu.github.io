@@ -19,6 +19,7 @@
     <nav class="topics" aria-label="操作マニュアルの目次">
       <a href="#setup">シーンを準備する</a><a href="#timing">曲に目印を付ける</a><a href="#animation">キーを編集する</a><a href="#effects">演出を作る</a><a href="#organize">階層を整理する</a><a href="#preview">確認・再開する</a>
     </nav>
+    <p class="note">Toolkit の左のタブ一覧は、右端の境界線を左右にドラッグすると幅を調整できます。次に開いたときも同じ幅で表示されます。境界線をダブルクリックすると標準幅に戻ります。</p>
 
     <section id="setup">
       <h2>シーンを準備する</h2>
@@ -60,6 +61,7 @@
           <span class="key-line">進む　<kbd>Alt + Ctrl + →</kbd> または <kbd>Alt + 6</kbd></span>
         </dd></div>
 </dl><p class="note">数字はキーボード上段を使います。macOSではAltはOption、16分音符の矢印操作のCtrlはCommandです。割り当ては Edit → Shortcuts → Particle Live で変更できます。</p>
+      <p><strong>キー割り当てを変更するには</strong>、Toolkit の「よく使う項目 → ショートカット設定を開く」を押し、Unity の Shortcuts で「Particle Live」を検索します。変更する操作をダブルクリックし、使いたいキーを押します。BPM 移動は方向・移動幅ごとに、オン・オフの記録は「選択オブジェクトを現在のフレームでオン」で設定できます。</p>
       <h3 id="active">選択したオブジェクトを指定フレームで出現させる</h3>
       <p>メインクリップを開き、Hierarchy で Animator 配下の演出オブジェクトを選びます。Unity の <strong>Animation ウィンドウ</strong>で出現させたいフレームに再生ヘッドを置き、<kbd>Ctrl + R</kbd> を押します。たとえば 120 f で実行すると、アクティブ状態に 119 f でオフ、120 f でオンのキーが入ります。0 f で実行するとオンのキーだけが入ります。</p>
       <h3 id="snap">選んだキーをまとめて拍に揃える</h3>
@@ -116,6 +118,7 @@
       <h2>確認・再開する</h2>
       <h3 id="audition">いま編集している箇所を聴き直す</h3>
       <p>ライブの Timeline または Animation ウィンドウで確認したい位置に再生ヘッドを置き、<kbd>スペース</kbd>を長押しします。押している間は試聴が続き、離すと押し始めた位置に戻ります。短く押すと通常の再生・停止に使えます。</p>
+      <p>試聴キーを変更するには「よく使う項目 → ショートカット設定を開く」で「Particle Live」を検索し、「長押しプレビュー（Animation）」または「長押しプレビュー（Timeline）」にキーを割り当てます。設定したウィンドウでは新しいキーで短押し・長押しを使えます。割り当てを空にするとスペース長押しに戻ります。</p>
       <h3 id="loop">観客視点でサビを繰り返し見る</h3>
       <ol>
         <li>Scene ビューを観客の位置に合わせ、<strong>Preview → 観客視点 → Scene ビューから追加</strong>を押します。高さや FOV（視野角）は一覧で調整できます。</li>
