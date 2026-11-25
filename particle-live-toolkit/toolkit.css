@@ -42,6 +42,10 @@ dd { color: #d6e1e6; margin: 0; overflow-wrap: anywhere; }
 .key-line { display: block; }
 kbd { font: inherit; font-size: .92em; white-space: nowrap; }
 .guide-link { margin-top: 1.2rem; }
+.manual-shot { margin: .9rem 0 1.65rem; }
+.manual-shot a { display: block; width: fit-content; max-width: 100%; cursor: zoom-in; }
+.manual-shot img { display: block; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: .25rem; }
+.manual-shot figcaption { margin-top: .4rem; color: var(--muted); font-size: .92rem; }
 @media (max-width: 38rem) {
   .entries > div { grid-template-columns: 1fr; }
 }

@@ -15,7 +15,7 @@
   </header>
   <main>
     <h1>操作マニュアル</h1>
-    <p>Unity の <strong>Tools → Particle Live Toolkit</strong> を開きます。初めてライブを作る方は「シーンを準備する」から、制作中の方は今の作業から読み進めてください。</p>
+    <p>Unity の <strong>Tools → Particle Live Toolkit</strong> を開きます。初めてライブを作る方は「シーンを準備する」から、制作中の方は今の作業から読み進めてください。画面例はタップまたはクリックで原寸表示できます。</p>
     <nav class="topics" aria-label="操作マニュアルの目次">
       <a href="#setup">シーンを準備する</a><a href="#timing">曲に目印を付ける</a><a href="#animation">キーを編集する</a><a href="#effects">演出を作る</a><a href="#organize">階層を整理する</a><a href="#preview">確認・再開する</a>
     </nav>
@@ -23,10 +23,12 @@
     <section id="setup">
       <h2>シーンを準備する</h2>
       <ol>
-        <li>Toolkit の左側で <strong>Project</strong> を開き、ライブ名、BPM、楽曲、出力先フォルダを指定します。楽曲は任意です。あとで音を聴きながら編集する場合は、ここで音源を選びます。</li>
+        <li>Toolkit の左側で <strong>Project</strong> を開き、ライブ名、BPM、楽曲、出力先フォルダを指定します。楽曲は任意です。あとで音を聴きながら編集する場合は、ここで音源を選びます。
+        <figure class="manual-shot"><a href="images/project.webp" aria-label="Project のライブ名・BPM・楽曲・出力先の入力欄（画像を開く）"><img src="images/project.webp" width="654" height="180" loading="lazy" decoding="async" alt="Project のライブ名・BPM・楽曲・出力先の入力欄"></a><figcaption>楽曲欄に音源を入れ、BPM と出力先を確認します。</figcaption></figure></li>
         <li>「作られるもの」を確認し、<strong>ライブを生成</strong>を押します。新規シーンが開き、黒い Skybox、観客視点のカメラ、メインの AnimationClip と編集用 Timeline が用意されます。選んだ音源には Load In Background と Preload Audio Data が設定されます。</li>
         <li>Hierarchy でライブ名の下の <strong>Animation</strong> を選び、Unity の <strong>Window → Sequencing → Timeline</strong> を開きます。音源とメインクリップは先頭から並んでいます。Timeline のアニメーションクリップをダブルクリックすると、Animation ウィンドウでキーを編集できます。</li>
       </ol>
+      <figure class="manual-shot"><a href="images/timeline.webp" aria-label="Timeline の上段に Starlight_Main、下段に Demo Loop。両方の開始は 0 フレーム（画像を開く）"><img src="images/timeline.webp" width="880" height="127" loading="lazy" decoding="async" alt="Timeline の上段に Starlight_Main、下段に Demo Loop。両方の開始は 0 フレーム"></a><figcaption>上段の Starlight_Main が編集するクリップです。下段の音源と開始位置が揃っています。</figcaption></figure>
       <p>演出用のオブジェクトは <strong>Animation → Effects</strong> の下に置きます。Animator と Timeline の PlayableDirector は同じ Animation オブジェクトにあり、この階層を基準にクリップが各演出を参照します。</p>
     </section>
 
@@ -35,8 +37,10 @@
       <h3 id="copy-time">小節や音符の長さを秒数欄へ貼り付ける</h3>
       <p>上部の「ライブ」と「BPM」を確認し、<strong>よく使う項目 → 秒数コピー</strong>で「1小節」「2小節」「4小節」「2分」「4分」「3分」のいずれかを押します。たとえば BPM 120・1小節4拍なら「4分」で 0.5 秒、「1小節」で 2 秒をコピーできます。Particle System の Start Lifetime など、秒数を使う欄に貼り付けてください。</p>
       <p>別の音符や倍率を使うときは <strong>Beat</strong> を開きます。倍率とフレームレートを指定すると、各行で秒数と対応するフレーム数を見比べられます。「コピー」で取得する値は秒数です。</p>
+      <figure class="manual-shot"><a href="images/beat.webp" aria-label="Beat の換算表。BPM 120・60 fps で4分は 0.500000 秒、30フレーム（画像を開く）"><img src="images/beat.webp" width="470" height="443" loading="lazy" decoding="async" alt="Beat の換算表。BPM 120・60 fps で4分は 0.500000 秒、30フレーム"></a><figcaption>4分の行を右にたどると「コピー」があります。小節単位で使うときは下の「1 小節」の行を見ます。</figcaption></figure>
       <h3>サビの頭にマーカーを置く</h3>
       <p>編集中のライブの Timeline でサビの頭に再生ヘッドを置き、<strong>Marker System → 現在位置にマーカーを追加</strong>を押します。行に「サビ入り」などの名前と色を付けます。位置はメインクリップの fps に基づくフレーム番号で、60 fps なら 2 秒の位置は 120 f です。数値を編集して位置を微調整でき、「移動」でその箇所へ戻れます。</p>
+      <figure class="manual-shot"><a href="images/markers.webp" aria-label="Marker System に並ぶイントロ 0 f、サビ入り 120 f、サビ終わり 360 f（画像を開く）"><img src="images/markers.webp" width="502" height="171" loading="lazy" decoding="async" alt="Marker System に並ぶイントロ 0 f、サビ入り 120 f、サビ終わり 360 f"></a><figcaption>この例では「サビ入り」の「移動」を押すと 120 f に戻れます。</figcaption></figure>
     </section>
 
     <section id="animation">
@@ -60,12 +64,14 @@
       <p>メインクリップを開き、Hierarchy で Animator 配下の演出オブジェクトを選びます。Unity の <strong>Animation ウィンドウ</strong>で出現させたいフレームに再生ヘッドを置き、<kbd>Ctrl + R</kbd> を押します。たとえば 120 f で実行すると、アクティブ状態に 119 f でオフ、120 f でオンのキーが入ります。0 f で実行するとオンのキーだけが入ります。</p>
       <h3 id="snap">選んだキーをまとめて拍に揃える</h3>
       <p>Animation ウィンドウで移動したいキーを選び、<strong>Beat Snap</strong> で「音符」を指定します。曲の最初の拍が音源の先頭より 0.2 秒遅ければ「曲頭オフセット（秒）」に 0.2 を入力し、<strong>選択キーを拍に合わせる</strong>を押します。移動先でキーが重なると処理は中止されます。一律にずらす場合は Toolkit の <strong>Animation → 選択キーを時間移動</strong>で秒数を指定できます。</p>
+      <figure class="manual-shot"><a href="images/snap.webp" aria-label="Beat Snap の音符、曲頭オフセット、選択キーを拍に合わせるボタン（画像を開く）"><img src="images/snap.webp" width="502" height="70" loading="lazy" decoding="async" alt="Beat Snap の音符、曲頭オフセット、選択キーを拍に合わせるボタン"></a><figcaption>曲頭に無音がある場合は「曲頭オフセット（秒）」を入力してからキーを揃えます。</figcaption></figure>
       <h3 id="repeat">作った点滅を4回ずつ繰り返す</h3>
       <ol>
         <li>Unity の Animation ウィンドウで、繰り返したいカーブの最初と最後のキーを選びます。<strong>よく使う項目 → 現在の範囲を取得</strong>を押すと、選んだカーブだけが対象になり、その範囲内のキーをまとめて使えます。</li>
         <li>「ビートで4回」を押すと、元の点滅のコピーが1拍間隔で4回追加されます。もう一度押すと続きにさらに4回入ります。「2ビートで4回」「4ビートで4回」に切り替えると、続きから間隔を広げられます。</li>
         <li>別の点滅を元にしたいときは、キーを選び直して「現在の範囲を取得」を押します。元の範囲が間隔より長いときは、取得範囲を短くするか、長い間隔を選んでください。</li>
       </ol>
+      <figure class="manual-shot"><a href="images/quick.webp" aria-label="よく使う項目の下段にある範囲取得ボタンと3種類のリピートボタン（画像を開く）"><img src="images/quick.webp" width="654" height="200" loading="lazy" decoding="async" alt="よく使う項目の下段にある範囲取得ボタンと3種類のリピートボタン"></a><figcaption>まず「現在の範囲を取得」、次にその下の「ビートで4回」を押します。</figcaption></figure>
       <p>回数や間隔を細かく指定する場合は Toolkit の <strong>Animation</strong> を開き、対象クリップ、範囲、対象カーブ、間隔、回数を設定します。「プレビュー」で追加・削除されるキー数を確認して「複製を実行」を押します。複製先のキーを消す・残す・中止する設定と「フレームに合わせる」は、「よく使う項目」のリピートにも反映されます。</p>
     </section>
 
@@ -80,6 +86,7 @@
         <div><dt>Burst 100</dt><dd>Emission の Rate over Time を 0 にし、開始時に100個をまとめて放出します。個数は Bursts の Count で変更できます。</dd></div>
         <div><dt>広範囲に降る雪</dt><dd>高さ 8 m にある 20 × 20 m の範囲から重力で雪を降らせます。降る範囲は Shape、落ち方は Gravity Modifier で調整できます。</dd></div>
       </dl>
+      <figure class="manual-shot"><a href="images/utilities.webp" aria-label="便利ツールのプリセット5種類と Max Particles の対象数・適用ボタン（画像を開く）"><img src="images/utilities.webp" width="654" height="207" loading="lazy" decoding="async" alt="便利ツールのプリセット5種類と Max Particles の対象数・適用ボタン"></a><figcaption>上段でプリセットを作成し、下段では選択階層に含まれる Particle System の数を確認できます。</figcaption></figure>
       <h3 id="capacity">演出のピークに合わせて Max Particles を設定する</h3>
       <p>プレビューを終了し、Hierarchy で対象の Particle System またはその親を選びます。<strong>便利ツール → Max Particles</strong> で対象数を確認し、「必要数を計算して適用」を押します。Duration、Start Lifetime、放出レート、Burst の個数や繰り返し、アニメーション中の値を考慮し、推定した同時生存数に 25% と8個の余裕を加えます。移動距離で放出する粒子や親から発火する Sub Emitter など、上限を決められないものはスキップされ、理由が表示されます。</p>
       <h3 id="batch-edit">複数の粒子・マテリアルに同じ設定を適用する</h3>
@@ -87,18 +94,21 @@
       <p><strong>Material Editor</strong> では Project でマテリアルを選ぶか、Hierarchy で Renderer を含む階層を選びます。対象に共通するプロパティを選んで「プロパティを一括変更」を押します。共有マテリアルの編集は、それを使う他の Renderer の見た目にも反映されます。選択階層の割り当てだけを変える場合は、置換元と置換先のマテリアルを指定します。</p>
       <h3 id="reuse">作った演出を別の場面で使う</h3>
       <p>Hierarchy で演出の親を選び、<strong>Effect Preset</strong> で保存カテゴリを入力して「選択した演出を保存」を押します。次に使うときはカテゴリで絞り込み、サムネイル横の「配置」を押してください。別の Unity プロジェクトへ渡すときは「書き出し」で依存アセットを含むパッケージを作れます。</p>
+      <figure class="manual-shot"><a href="images/presets.webp" aria-label="Effect Preset の保存カテゴリ、選択した演出を保存、カテゴリで絞り込みの各欄（画像を開く）"><img src="images/presets.webp" width="502" height="72" loading="lazy" decoding="async" alt="Effect Preset の保存カテゴリ、選択した演出を保存、カテゴリで絞り込みの各欄"></a><figcaption>演出の親を選んだ状態で保存カテゴリを入力し、「選択した演出を保存」を押します。</figcaption></figure>
     </section>
 
     <section id="organize">
       <h2>階層を整理する</h2>
       <h3 id="arrange">複数の演出を同じ間隔で並べる</h3>
       <p>Hierarchy で2個以上のオブジェクトを選び、<strong>Transform</strong> の「等間隔」または「円形」を開きます。並べる順序と配置の値を指定して「等間隔に並べる」または「円形に並べる」を押します。「ミラー」では「複製して反対側に置く」を選ぶと元の演出を残せます。</p>
+      <figure class="manual-shot"><a href="images/transform.webp" aria-label="Transform の対象数・並べる順序と、等間隔・円形・ミラーなどの操作タブ（画像を開く）"><img src="images/transform.webp" width="502" height="98" loading="lazy" decoding="async" alt="Transform の対象数・並べる順序と、等間隔・円形・ミラーなどの操作タブ"></a><figcaption>対象数と「並べる順序」を確認し、下のタブで「等間隔」か「円形」を選びます。</figcaption></figure>
       <h3 id="paths">名前や親を変えた後も同じキーで動かす</h3>
       <ol>
         <li><strong>よく使う項目 → オブジェクト変更時パス自動修正</strong>で「変更前に押す」を押し、現在の階層を記録します。</li>
         <li>同じ Animator の下でオブジェクトを改名するか、親を変更します。「変更後に押す」を押して、クリップの参照パスを更新します。</li>
         <li>参照先を個別に確認したい場合は <strong>Path Fixer</strong> を開きます。「検知した変更」から対象を選ぶか、「手動リマップ」に旧パスと新パスを入力します。「プレビュー」で対象クリップを確認して「パスを修正」を押します。</li>
       </ol>
+      <figure class="manual-shot"><a href="images/pathfixer.webp" aria-label="Path Fixer の手動リマップ、リンク切れ、対象クリップの各欄（画像を開く）"><img src="images/pathfixer.webp" width="502" height="190" loading="lazy" decoding="async" alt="Path Fixer の手動リマップ、リンク切れ、対象クリップの各欄"></a><figcaption>手動で参照先を対応付けるときは「行を追加」を使い、その下で対象クリップを確認します。</figcaption></figure>
       <p>まとめて改名するときは <strong>Batch Rename</strong> で対象を選び、連番・接頭辞・置換などの結果を一覧で確認します。同じ Animator 配下なら「Animation パスも修正」を選んで「表示した名前を適用」を押すと、改名と参照の更新を一度で行えます。</p>
     </section>
 
@@ -112,8 +122,10 @@
         <li>視点を選んで「区間ループ」を有効にし、サビの開始と終了を指定します。Marker System に登録したマーカーも端点に使えます。「再生」を押すと Play Mode に入らずに確認できます。</li>
         <li>途中から見るときに長寿命の粒子がまだ出そろっていなければ、pre-roll の秒数を長くします。指定した位置より手前から粒子を計算できます。</li>
       </ol>
+      <figure class="manual-shot"><a href="images/preview.webp" aria-label="Preview の観客視点一覧と、Scene ビューから追加、高さ、FOVの各欄（画像を開く）"><img src="images/preview.webp" width="489" height="172" loading="lazy" decoding="async" alt="Preview の観客視点一覧と、Scene ビューから追加、高さ、FOVの各欄"></a><figcaption>観客の位置に Scene ビューを合わせてから登録します。視点名の右で目の高さと視野角を調整できます。</figcaption></figure>
       <h3 id="resume">Unity を閉じた後や、別のライブを編集した後に戻る</h3>
       <p><strong>ライブの編集</strong>の「読み込むライブ」に目的のライブの Project アセットを指定し、「ライブ設定を読み込む」を押します。「再開フレーム」を確認して<strong>このライブの編集に戻る</strong>を押すと、そのライブのシーンとメインクリップを開き、記録した編集位置に戻れます。</p>
+      <figure class="manual-shot"><a href="images/workspace.webp" aria-label="ライブの編集で Starlight_Project と再開フレームを表示した画面（画像を開く）"><img src="images/workspace.webp" width="654" height="186" loading="lazy" decoding="async" alt="ライブの編集で Starlight_Project と再開フレームを表示した画面"></a><figcaption>再開するライブ名とフレームを確認し、一番上の「このライブの編集に戻る」を押します。</figcaption></figure>
       <p>BPM、曲頭オフセット、1小節の拍数、各ツールの設定値を今の組み合わせで残すには「現在のライブ設定を保存」を押します。別の設定を試した後は「保存時のツール設定を復元」で戻せます。保存先はライブごとのアセットなので、同じ Unity プロジェクトで複数のライブを進めても、それぞれの設定を呼び出せます。</p>
     </section>
     <p class="guide-link"><a href="../guide/">← 機能ガイドに戻る</a></p>
